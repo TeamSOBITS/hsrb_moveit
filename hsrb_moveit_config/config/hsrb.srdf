@@ -93,7 +93,7 @@
     </group_state>
     <group_state name="neutral" group="head">
         <joint name="head_pan_joint" value="0.0" />
-        <joint name="head_tilt_joint" value="0.0" />
+        <joint name="head_tilt_joint" value="-0.52" />
     </group_state>
     <group_state name="neutral" group="base">
         <joint name="odom_x" value="0.0" />

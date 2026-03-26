@@ -58,6 +58,7 @@ int main(int argc, char** argv) {
 
   moveit_msgs::msg::CollisionObject collision_object;
   collision_object.header.frame_id = whole_body_group.getPlanningFrame();
+  RCLCPP_INFO(logger, "planning frame: %s", collision_object.header.frame_id.c_str());
   collision_object.id = "table";
 
   shape_msgs::msg::SolidPrimitive table_primitive;
