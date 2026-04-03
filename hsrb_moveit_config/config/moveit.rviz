@@ -888,6 +888,205 @@ Visualization Manager:
         Show Robot Visual: true
       Value: true
       Velocity_Scaling_Factor: 0.1
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        arm_flex_link:
+          Value: true
+        arm_lift_link:
+          Value: true
+        arm_roll_link:
+          Value: true
+        base_b_bumper_link:
+          Value: true
+        base_f_bumper_link:
+          Value: true
+        base_footprint:
+          Value: true
+        base_footprint_wheel:
+          Value: true
+        base_imu_frame:
+          Value: true
+        base_l_drive_wheel_link:
+          Value: true
+        base_l_passive_wheel_x_frame:
+          Value: true
+        base_l_passive_wheel_y_frame:
+          Value: true
+        base_l_passive_wheel_z_link:
+          Value: true
+        base_link:
+          Value: true
+        base_r_drive_wheel_link:
+          Value: true
+        base_r_passive_wheel_x_frame:
+          Value: true
+        base_r_passive_wheel_y_frame:
+          Value: true
+        base_r_passive_wheel_z_link:
+          Value: true
+        base_range_sensor_link:
+          Value: true
+        base_roll_link:
+          Value: true
+        hand_camera_frame:
+          Value: true
+        hand_camera_gazebo_frame:
+          Value: true
+        hand_l_distal_link:
+          Value: true
+        hand_l_finger_tip_frame:
+          Value: true
+        hand_l_finger_vacuum_frame:
+          Value: true
+        hand_l_mimic_distal_link:
+          Value: true
+        hand_l_proximal_link:
+          Value: true
+        hand_l_spring_proximal_link:
+          Value: true
+        hand_motor_dummy_link:
+          Value: true
+        hand_palm_link:
+          Value: true
+        hand_r_distal_link:
+          Value: true
+        hand_r_finger_tip_frame:
+          Value: true
+        hand_r_mimic_distal_link:
+          Value: true
+        hand_r_proximal_link:
+          Value: true
+        hand_r_spring_proximal_link:
+          Value: true
+        head_center_camera_frame:
+          Value: true
+        head_center_camera_gazebo_frame:
+          Value: true
+        head_l_stereo_camera_frame:
+          Value: true
+        head_l_stereo_camera_gazebo_frame:
+          Value: true
+        head_l_stereo_camera_link:
+          Value: true
+        head_pan_link:
+          Value: true
+        head_r_stereo_camera_gazebo_frame:
+          Value: true
+        head_r_stereo_camera_link:
+          Value: true
+        head_rgbd_sensor_depth_frame:
+          Value: true
+        head_rgbd_sensor_gazebo_frame:
+          Value: true
+        head_rgbd_sensor_link:
+          Value: true
+        head_rgbd_sensor_rgb_frame:
+          Value: true
+        head_tilt_link:
+          Value: true
+        odom:
+          Value: true
+        target_tf:
+          Value: true
+        torso_lift_link:
+          Value: true
+        world:
+          Value: true
+        wrist_flex_link:
+          Value: true
+        wrist_ft_sensor_frame:
+          Value: true
+        wrist_ft_sensor_mount_link:
+          Value: true
+        wrist_roll_link:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        odom:
+          base_footprint:
+            base_link:
+              arm_lift_link:
+                arm_flex_link:
+                  arm_roll_link:
+                    wrist_flex_link:
+                      wrist_ft_sensor_mount_link:
+                        wrist_ft_sensor_frame:
+                          wrist_roll_link:
+                            hand_palm_link:
+                              hand_camera_frame:
+                                hand_camera_gazebo_frame:
+                                  {}
+                              hand_l_proximal_link:
+                                hand_l_spring_proximal_link:
+                                  hand_l_mimic_distal_link:
+                                    hand_l_distal_link:
+                                      hand_l_finger_tip_frame:
+                                        {}
+                                      hand_l_finger_vacuum_frame:
+                                        {}
+                              hand_motor_dummy_link:
+                                {}
+                              hand_r_proximal_link:
+                                hand_r_spring_proximal_link:
+                                  hand_r_mimic_distal_link:
+                                    hand_r_distal_link:
+                                      hand_r_finger_tip_frame:
+                                        {}
+              base_b_bumper_link:
+                {}
+              base_f_bumper_link:
+                {}
+              base_imu_frame:
+                {}
+              base_range_sensor_link:
+                {}
+              base_roll_link:
+                base_l_drive_wheel_link:
+                  {}
+                base_l_passive_wheel_x_frame:
+                  base_l_passive_wheel_y_frame:
+                    base_l_passive_wheel_z_link:
+                      {}
+                base_r_drive_wheel_link:
+                  {}
+                base_r_passive_wheel_x_frame:
+                  base_r_passive_wheel_y_frame:
+                    base_r_passive_wheel_z_link:
+                      {}
+              torso_lift_link:
+                head_pan_link:
+                  head_tilt_link:
+                    head_center_camera_frame:
+                      head_center_camera_gazebo_frame:
+                        {}
+                    head_l_stereo_camera_link:
+                      head_l_stereo_camera_frame:
+                        head_rgbd_sensor_rgb_frame:
+                          head_rgbd_sensor_depth_frame:
+                            {}
+                      head_l_stereo_camera_gazebo_frame:
+                        {}
+                    head_r_stereo_camera_link:
+                      head_r_stereo_camera_gazebo_frame:
+                        {}
+                    head_rgbd_sensor_link:
+                      head_rgbd_sensor_gazebo_frame:
+                        {}
+          base_footprint_wheel:
+            {}
+          target_tf:
+            {}
+          world:
+            {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
