@@ -26,7 +26,7 @@ ament_target_dependencies(moveit_ik_demo moveit_ros_planning_interface rclcpp so
 
 add_executable(hsrb_move_tf_server example/hsrb_move_tf_server.cpp)
 target_include_directories(hsrb_move_tf_server PUBLIC ${EIGEN3_INCLUDE_DIR})
-ament_target_dependencies(hsrb_move_tf_server moveit_ros_planning_interface rclcpp sobits_interfaces)
+ament_target_dependencies(hsrb_move_tf_server moveit_ros_planning_interface rclcpp sobits_interfaces tf2 tf2_ros tf2_geometry_msgs)
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
