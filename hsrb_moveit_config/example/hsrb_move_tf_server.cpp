@@ -9,6 +9,8 @@
 
 #include <tf2_ros/buffer.h>
 #include <tf2_ros/transform_listener.h>
+#include <tf2/LinearMath/Matrix3x3.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 #include "sobits_interfaces/srv/get_hand_to_target_tf.hpp"
 #include "interfaces.hpp"
@@ -25,7 +27,7 @@ public:
     tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
     service_ = this->create_service<GetHandToTargetTF>(
-        "moveit_to_tf",
+        "hsrb/moveit_to_tf",
         std::bind(&MoveitIKServiceNode::callback, this,
                   std::placeholders::_1, std::placeholders::_2));
 
@@ -53,11 +55,12 @@ private:
 
     RCLCPP_INFO(logger, "Target TF: %s", request->target_frame.c_str());
 
-    if (!interfaces_->MoveToNeutral()) {
-      response->success = false;
-      response->message = "MoveToNeutral failed";
-      return;
-    }
+    // debug: MoveToNeutral
+    // if (!interfaces_->MoveToNeutral()) {
+    //   response->success = false;
+    //   response->message = "MoveToNeutral failed";
+    //   return;
+    // }
 
     rclcpp::sleep_for(std::chrono::seconds(1));
 
@@ -73,7 +76,23 @@ private:
       target_pose.position.x = transform.transform.translation.x;
       target_pose.position.y = transform.transform.translation.y;
       target_pose.position.z = transform.transform.translation.z;
-      target_pose.orientation = transform.transform.rotation;
+ 
+      tf2::Quaternion q_orig;
+      tf2::fromMsg(transform.transform.rotation, q_orig);
+  
+      double roll, pitch, yaw;
+      tf2::Matrix3x3(q_orig).getRPY(roll, pitch, yaw);
+
+  
+      roll  += -M_PI;
+      pitch += -M_PI/2;
+      yaw   += 0.0;
+
+      tf2::Quaternion q_new;
+      q_new.setRPY(roll, pitch, yaw);
+      q_new.normalize();
+
+      target_pose.orientation = tf2::toMsg(q_new);
     }
     catch (tf2::TransformException &ex)
     {
