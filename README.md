@@ -37,7 +37,7 @@ source install/setup.bash
 ros2 launch hsrb_moveit_config hsrb_demo.launch.py
 ```
 
-起動する際に移動機構を含めた重みパラメータの設定をしてください(hsrb_moveit/config/kinematics.yaml)
+移動機構を含めたプランニングを実行する際に重みパラメータを用途ごとに調整してください(hsrb_moveit/config/kinematics.yaml)
 ```
 whole_body_weighted:
   kinematics_solver: hsrb_moveit_kinematics/HSRBKinematicsPlugin
